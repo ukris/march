@@ -1,5 +1,4 @@
 /**
- * Updater: Karoshi
  */
 define(function(require, exports, module) {
     var Entity = require('famous/core/Entity');
@@ -29,8 +28,8 @@ define(function(require, exports, module) {
         this.options = Object.create(this.constructor.DEFAULT_OPTIONS);
         this._optionsManager = new OptionsManager(this.options);
         if (options) this._optionsManager.setOptions(options);
-        //Karoshi : depth opacity/Fog value
-        this._fog = 0;
+        //UK
+	this._fog = 0;
         this._node = null;
         this._position = 0;
 
@@ -64,7 +63,7 @@ define(function(require, exports, module) {
         margin: 0,
         clipSize: undefined,
         groupScroll: false,
-        fog:0//Karoshi:depth opacity/fog support
+        fog:0//UK:depth opacity/fog support
     };
 
     function _sizeForDir(size) {
@@ -76,7 +75,7 @@ define(function(require, exports, module) {
     function _output(node, offset,target,opacity) {
         var size = node.getSize ? node.getSize() : this._contextSize;
         var transform = this._outputFunction(offset);
-        //Karoshi : depth opacity support
+        //UK : depth opacity support
         target.push({transform: transform,opacity:opacity, target: node.render()});
         return _sizeForDir.call(this, size);
     }
@@ -254,7 +253,7 @@ define(function(require, exports, module) {
         //console.log("clipSize"+clipSize);
         var currNode = this._node;
         while (currNode && offset - position < clipSize + this.options.margin) {
-        	//Karoshi : depth opacity support
+        	//UK : depth opacity support
             offset += _output.call(this, currNode, offset, result,1-this.options.fog*offset/clipSize);
             currNode = currNode.getNext ? currNode.getNext() : null;
         }

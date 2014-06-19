@@ -5,7 +5,7 @@
  * Owner: felix@famo.us
  * @license MPL 2.0
  * @copyright Famous Industries, Inc. 2014
- * Updater: Karoshi
+ * Updater:UK
  */
 
 define(function(require, exports, module) {
@@ -98,7 +98,7 @@ define(function(require, exports, module) {
         this._touchVelocity = undefined;
         this._earlyEnd = false;
         this._needsPaginationCheck = false;
-        //Karoshi: depth opacity/fog support
+        //UK: depth opacity/fog support
         var opt =  Scroller.DEFAULT_OPTIONS;
         opt.fog= options.fog;
         this._scroller = new Scroller(opt);
@@ -108,7 +108,7 @@ define(function(require, exports, module) {
 
         _bindEvents.call(this);
         
-        //Karoshi
+        //UK
         this._currentIndex = 0;
     }
 
@@ -131,7 +131,7 @@ define(function(require, exports, module) {
         pageSwitchSpeed: 0.5,
         speedLimit: 10,
         groupScroll: false,
-        fog:0//Karoshi: depth opacity/fog support
+        fog:0//UK depth opacity/fog support
     };
 
     /** @enum */
@@ -444,7 +444,7 @@ define(function(require, exports, module) {
         this._eventOutput.emit('pageChange', {direction: 1});
         return nextNode;
     };
-    /** Karoshi: alpha version
+    /** UK: alpha version
      * goToPage paginates your Scrollview instance forwards to index.
      * @method goToPage
      * @return {ViewSequence} The new node.
